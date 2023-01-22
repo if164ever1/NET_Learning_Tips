@@ -21,7 +21,7 @@ namespace Delegates
             //var sayHello = new SayHello(Hello);
             Action<string> sayHello;
 
-            Func<string, string> conversation = delegate(string message)
+            Func<string, string> conversation = (message) =>
             {
                 Console.WriteLine(message);
                 return Console.ReadLine();
@@ -30,7 +30,7 @@ namespace Delegates
             var name = conversation("What is your name");
 
             //Anonymous delegate
-            sayHello = delegate(string greeting)
+            sayHello = (greeting) =>
             {
                 Console.WriteLine(greeting, name);
             };
