@@ -11,7 +11,7 @@ namespace Linq
         public string  Color { get; set; }
         public int Sightings { get; set; }
     }
-
+    
     internal static class Program
     {
         public static void Main(string[] args)
@@ -23,7 +23,6 @@ namespace Linq
             {
                 Console.WriteLine(number);
             }
-            
             
             //LINQ WITH OBJECTS
             List<Bird> birds = new List<Bird>
@@ -39,10 +38,6 @@ namespace Linq
             {
                 Console.WriteLine(number);
             }
-
-
-
-
         }
     }
 }
