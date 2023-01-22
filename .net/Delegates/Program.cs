@@ -20,22 +20,23 @@ namespace Delegates
         {
             //var sayHello = new SayHello(Hello);
             Action<string> sayHello;
+
+            Func<string, string> conversation = delegate(string message)
+            {
+                Console.WriteLine(message);
+                return Console.ReadLine();
+            };
+
+            var name = conversation("What is your name");
+
             //Anonymous delegate
-            sayHello = delegate(string name1)
+            sayHello = delegate(string greeting)
             {
-                Console.WriteLine($"Hello, {name1}");
+                Console.WriteLine(greeting, name);
             };
-            Console.WriteLine("What is your name?");
-            var name = Console.ReadLine();
-            sayHello(name);
-            sayHello = delegate(string name1)
-            {
-                Console.WriteLine($"Goodbye, {name}");
-            };
-            sayHello(name);
             
-            
-            
+            sayHello($"Hello, {name}"); 
+            sayHello($"Goodbye, {name}");
         }
     }
 }
